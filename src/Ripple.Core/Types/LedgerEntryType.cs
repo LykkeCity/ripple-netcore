@@ -24,6 +24,10 @@ namespace Ripple.Core.Types
         public static readonly LedgerEntryType FeeSettings = Add(nameof(FeeSettings), 's');
         public static readonly LedgerEntryType Ticket = Add(nameof(Ticket), 'T');
         public static readonly LedgerEntryType SignerList = Add(nameof(SignerList), 'S');
+        public static readonly LedgerEntryType Check = Add(nameof(Check), 'C'); // 0x0043, 67
+        public static readonly LedgerEntryType DepositPreauth = Add(nameof(DepositPreauth), 'p'); // 0x0070, 112
+        public static readonly LedgerEntryType Escrow = Add(nameof(Escrow), 'u'); // 0x0075, 117
+        public static readonly LedgerEntryType PayChannel = Add(nameof(PayChannel), 'x'); // 0x0078, 120
 
         public static LedgerEntryType FromJson(JToken jToken)
         {
