@@ -19,13 +19,39 @@
     <Version>1.1.0</Version>    
   </PropertyGroup>
 
-  <ItemGroup>
+  <ItemGroup Label="Direct Nuget dependencies">
     <PackageReference Include="Newtonsoft.Json" Version="9.0.1" />
   </ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\Ripple.Core\Ripple.Core.csproj" />
-    <ProjectReference Include="..\Ripple.Signing\Ripple.Signing.csproj" />
+  <ItemGroup Label="Direct project dependencies">
+    <ProjectReference Include="..\Ripple.Core\Ripple.Core.csproj" PrivateAssets="All" />
+    <ProjectReference Include="..\Ripple.Signing\Ripple.Signing.csproj" PrivateAssets="All" />
+  </ItemGroup>
+
+  <ItemGroup Label="Transient Nuget dependencies">
+    <PackageReference Include="Portable.BouncyCastle" Version="1.8.1.3" />
+  </ItemGroup>
+
+  <ItemGroup Label="Transient project dependencies">
+    <ProjectReference Include="..\Chaos.NaCl\Chaos.NaCl.csproj" PrivateAssets="All" />
+    <ProjectReference Include="..\Ripple.Address\Ripple.Address.csproj" PrivateAssets="All" />
   </ItemGroup>
   
+  <!--
+    The following solves the problem that 'dotnet pack' does not include the DLLs from referenced projects.
+    See https://github.com/NuGet/Home/issues/3891 for a description of the problem
+    and for newer versions / workarounds / built-in methods.
+  -->
+  <PropertyGroup>
+    <TargetsForTfmSpecificBuildOutput>
+      $(TargetsForTfmSpecificBuildOutput);PackReferencedProjectOutputs
+    </TargetsForTfmSpecificBuildOutput>
+  </PropertyGroup>
+
+  <Target Name="PackReferencedProjectOutputs" DependsOnTargets="BuildOnlySettings;ResolveReferences">
+    <ItemGroup>
+      <BuildOutputInPackage Include="@(ReferenceCopyLocalPaths-&gt;WithMetadataValue('ReferenceSourceTarget', 'ProjectReference'))" />
+    </ItemGroup>
+  </Target>
+
 </Project>
