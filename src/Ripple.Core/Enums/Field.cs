@@ -127,6 +127,8 @@ namespace Ripple.Core.Enums
         public static readonly Uint64Field ExchangeRate = new Uint64Field(nameof(ExchangeRate), 6);
         public static readonly Uint64Field LowNode = new Uint64Field(nameof(LowNode), 7);
         public static readonly Uint64Field HighNode = new Uint64Field(nameof(HighNode), 8);
+        public static readonly Uint64Field DestinationNode = new Uint64Field(nameof(DestinationNode), 9);
+        public static readonly Uint64Field Cookie = new Uint64Field(nameof(Cookie), 10);
 
         public static readonly Hash128Field EmailHash = new Hash128Field(nameof(EmailHash), 1);
 
@@ -152,6 +154,8 @@ namespace Ripple.Core.Enums
         public static readonly Hash256Field Digest = new Hash256Field(nameof(Digest), 21);
         public static readonly Hash256Field Channel = new Hash256Field(nameof(Channel), 22);
         public static readonly Hash256Field ConsensusHash = new Hash256Field(nameof(ConsensusHash), 23);
+        public static readonly Hash256Field CheckID = new Hash256Field(nameof(CheckID), 24);
+
         // ReSharper disable once InconsistentNaming
         public static readonly Hash256Field hash = new Hash256Field(nameof(hash), 257);
         // ReSharper disable once InconsistentNaming
@@ -202,6 +206,8 @@ namespace Ripple.Core.Enums
         public static readonly AccountIdField Owner = new AccountIdField(nameof(Owner), 2);
         public static readonly AccountIdField Destination = new AccountIdField(nameof(Destination), 3);
         public static readonly AccountIdField Issuer = new AccountIdField(nameof(Issuer), 4);
+        public static readonly AccountIdField Authorize = new AccountIdField(nameof(Authorize), 5);
+        public static readonly AccountIdField Unauthorize = new AccountIdField(nameof(Unauthorize), 6);
         public static readonly AccountIdField Target = new AccountIdField(nameof(Target), 7);
         public static readonly AccountIdField RegularKey = new AccountIdField(nameof(RegularKey), 8);
 
@@ -228,6 +234,7 @@ namespace Ripple.Core.Enums
         public static readonly StArrayField Sufficient = new StArrayField(nameof(Sufficient), 7);
         public static readonly StArrayField AffectedNodes = new StArrayField(nameof(AffectedNodes), 8);
         public static readonly StArrayField Memos = new StArrayField(nameof(Memos), 9);
+        public static readonly StArrayField Majorities = new StArrayField(nameof(Majorities), 16);
 
         public static readonly Uint8Field CloseResolution = new Uint8Field(nameof(CloseResolution), 1);
         public static readonly Uint8Field Method = new Uint8Field(nameof(Method), 2);
@@ -250,5 +257,6 @@ namespace Ripple.Core.Enums
         public static readonly Field Transaction = new Field(nameof(Transaction), 1, FieldType.Transaction);
         public static readonly Field LedgerEntry = new Field(nameof(LedgerEntry), 1, FieldType.LedgerEntry);
         public static readonly Field Validation = new Field(nameof(Validation), 1, FieldType.Validation);
+        public static readonly Field Metadata = new Field(nameof(Metadata), 1, FieldType.Metadata);
     }
 }
