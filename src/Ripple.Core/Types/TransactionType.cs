@@ -26,9 +26,12 @@ namespace Ripple.Core.Types
         public static readonly TransactionType EscrowCancel = Add(nameof(EscrowCancel), 4);
 
         public static readonly TransactionType SetRegularKey = Add(nameof(SetRegularKey), 5);
+        public static readonly TransactionType NickNameSet = Add(nameof(NickNameSet), 6);
+
         public static readonly TransactionType OfferCreate = Add(nameof(OfferCreate), 7);
-        public static readonly TransactionType OfferCancel = Add(nameof(OfferCancel), 8);      
-        
+        public static readonly TransactionType OfferCancel = Add(nameof(OfferCancel), 8);
+        public static readonly TransactionType Contract = Add(nameof(Contract), 9);
+
         public static readonly TransactionType TicketCreate = Add(nameof(TicketCreate), 10);
         public static readonly TransactionType TicketCancel = Add(nameof(TicketCancel), 11);
 
@@ -37,6 +40,10 @@ namespace Ripple.Core.Types
         public static readonly TransactionType PaymentChannelCreate = Add(nameof(PaymentChannelCreate), 13);
         public static readonly TransactionType PaymentChannelFund = Add(nameof(PaymentChannelFund), 14);
         public static readonly TransactionType PaymentChannelClaim = Add(nameof(PaymentChannelClaim), 15);
+        public static readonly TransactionType CheckCreate = Add(nameof(CheckCreate), 16);
+        public static readonly TransactionType CheckCash = Add(nameof(CheckCash), 17);
+        public static readonly TransactionType CheckCancel = Add(nameof(CheckCancel), 18);
+        public static readonly TransactionType DepositPreauth = Add(nameof(DepositPreauth), 19);
 
         public static readonly TransactionType TrustSet = Add(nameof(TrustSet), 20);
         public static readonly TransactionType EnableAmendment = Add(nameof(EnableAmendment), 100);

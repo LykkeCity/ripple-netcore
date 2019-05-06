@@ -252,7 +252,7 @@ namespace Ripple.Core.Enums
 
         public static readonly Vector256Field Indexes = new Vector256Field(nameof(Indexes), 1);
         public static readonly Vector256Field Hashes = new Vector256Field(nameof(Hashes), 2);
-        public static readonly Vector256Field Features = new Vector256Field(nameof(Features), 3);
+        public static readonly Vector256Field Amendments = new Vector256Field(nameof(Amendments), 3);
 
         public static readonly Field Transaction = new Field(nameof(Transaction), 1, FieldType.Transaction);
         public static readonly Field LedgerEntry = new Field(nameof(LedgerEntry), 1, FieldType.LedgerEntry);

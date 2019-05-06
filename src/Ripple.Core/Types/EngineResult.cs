@@ -114,7 +114,12 @@ namespace Ripple.Core.Types
         public static readonly EngineResult tecDST_TAG_NEEDED = Add(nameof(tecDST_TAG_NEEDED), 143, "A destination tag is required.");
         public static readonly EngineResult tecINTERNAL = Add(nameof(tecINTERNAL), 144, "An internal error has occurred during processing.");
         public static readonly EngineResult tecOVERSIZE = Add(nameof(tecOVERSIZE), 145, "Object exceeded serialization limits.");
-        
+        public static readonly EngineResult tecCRYPTOCONDITION_ERROR = Add(nameof(tecCRYPTOCONDITION_ERROR), 146, "Malformed, invalid, or mismatched conditional or fulfillment.");
+        public static readonly EngineResult tecINVARIANT_FAILED = Add(nameof(tecINVARIANT_FAILED), 147, "One or more invariants for the transaction were not satisfied.");
+        public static readonly EngineResult tecEXPIRED = Add(nameof(tecEXPIRED), 148, "Expiration time is passed.");
+        public static readonly EngineResult tecDUPLICATE = Add(nameof(tecDUPLICATE), 149, "Ledger object already exists.");
+        public static readonly EngineResult tecKILLED = Add(nameof(tecKILLED), 150, "FillOrKill offer killed.");
+
         // ReSharper restore InconsistentNaming
         public bool ShouldClaimFee()
         {
